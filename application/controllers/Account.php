@@ -48,5 +48,18 @@ class Account extends CI_Controller {
 			}
 				echo "<script>window.location='".site_url('Account')."';</script>";
 	}
+	public function edit_admin($id){
+		$this->load->library('form_validation');
+
+		$this->form_validation->set_rules('nama', 'Nama', 'required');
+		$this->form_validation->set_rules('username','Username', 'required|min_length[5]|callback_username_check');
+		$this->form_validation->set_rules('email','Email', 'required|valid_email');
+		if ($this->input->post('password')){
+		$this->form_validation->set_rules('password','Password', 'required|min_length[6]');
+		}
+		$this->form_validation->set_rules('no_tlp','No.Tlp', 'required|numeric');
+		$this->form_validation->set_rules('rule','Level', 'required');
+
+	}
 	
 }
