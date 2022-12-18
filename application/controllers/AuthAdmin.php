@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class AuthAdmin extends CI_Controller {
 
 	public function index() {
+        check_already_login();
 		$this->load->view('admin/page/login');
 	}
 	public function proses()

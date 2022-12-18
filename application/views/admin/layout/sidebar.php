@@ -13,10 +13,10 @@
           <img src="<?=base_url()?>assets/admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Admin</a>
+          <a href="#" class="d-block"><?=$this->fungsi->user_login()->username?></a>
         </div>
       </div>
-
+ 
       <!-- SidebarSearch Form -->
       <div class="form-inline">
         <div class="input-group" data-widget="sidebar-search">
@@ -33,7 +33,7 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="<?=site_url('DashboardAdmin')?>" class="nav-link">
+            <a href="<?=site_url('DashboardAdmin')?>" class="nav-link <?=$this->uri->segment(1) == 'DashboardAdmin'? 'active' : '' ?>">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -41,8 +41,8 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
+          <li class="nav-item <?=$this->uri->segment(1) == 'Account'? 'menu-is-opening menu-open' : '' ?>">
+            <a href="#" class="nav-link <?=$this->uri->segment(1) == 'Account'? 'active' : '' ?>">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 Account Management
@@ -51,12 +51,14 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+            <?php if($this->session->userdata('rule') == 1 ) { ?>
               <li class="nav-item">
-                <a href="<?=site_url('Account')?>" class="nav-link">
+                <a href="<?=site_url('Account')?>" class="nav-link <?=$this->uri->segment(1) == 'Account'? 'active' : '' ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Admin Account</p>
                 </a>
               </li>
+              <?php } ?>
               <li class="nav-item">
                 <a href="../layout/top-nav-sidebar.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
