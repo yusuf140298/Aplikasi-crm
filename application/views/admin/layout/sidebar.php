@@ -33,7 +33,7 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="../widgets.html" class="nav-link">
+            <a href="<?=site_url('DashboardAdmin')?>" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -52,7 +52,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../layout/top-nav.html" class="nav-link">
+                <a href="<?=site_url('Account')?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Admin Account</p>
                 </a>
@@ -139,9 +139,40 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="" class="nav-link" data-toggle="modal" data-target="#logoutAdmin">
+              <i class="nav-icon fas fa-sign-out-alt"></i>
+              <p>
+                Log Out
+                <!-- <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
   </aside>
+
+  <!-- modal loogut -->
+
+  <div class="modal fade" id="logoutAdmin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Log Out Admin</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center">
+          are you sure you want to exit?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <a href="<?=site_url('AuthAdmin/logout')?>" class="btn btn-primary">Log Out</a>
+        </div>
+      </div>
+    </div>
+  </div>

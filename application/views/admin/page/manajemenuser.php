@@ -9,7 +9,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="<?=site_url('ManajementUser')?>">Account Management</a></li>
-              <!-- <li class="breadcrumb-item active">Blank Page</li> -->
+              <li class="breadcrumb-item active">Account Admin</li>
             </ol>
           </div>
         </div>
@@ -90,12 +90,12 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body text-center">
           sure you want to delete?
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <a href="<?=site_url('Account/delete_admin/'.$data->id_user)?>" class="btn btn-danger">Delete</a>
+          <a href="<?=site_url('Account/delete_admin/'.$data->id_user)?>" class="btn btn-primary">Delete</a>
         </div>
       </div>
     </div>
