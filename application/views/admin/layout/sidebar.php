@@ -13,7 +13,7 @@
           <img src="<?=base_url()?>assets/admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block"><?=$this->fungsi->user_login()->username?></a>
+          <a href="<?=site_url('Profile/index/'.$this->fungsi->user_login()->id_user)?>" class="d-block"><?=$this->fungsi->user_login()->username?></a>
         </div>
       </div>
  
@@ -86,7 +86,7 @@
           </li>
           <li class="nav-header">PRODUCTS MANAGEMENTS</li>
           <li class="nav-item">
-            <a href="../widgets.html" class="nav-link">
+            <a href="<?=site_url('Product')?>" class="nav-link <?=$this->uri->segment(1) == 'Product'? 'active' : '' ?>">
               <i class="nav-icon fas fa-list"></i>
               <p>
                 Product
@@ -95,7 +95,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../widgets.html" class="nav-link">
+            <a href="<?=site_url('Category')?>" class="nav-link <?=$this->uri->segment(1) == 'Category'? 'active' : '' ?>">
               <i class="nav-icon fas fa-indent"></i>
               <p>
                 Category
@@ -104,7 +104,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../widgets.html" class="nav-link">
+            <a href="<?=site_url('Package')?>" class="nav-link <?=$this->uri->segment(1) == 'Package'? 'active' : '' ?>">
               <i class="nav-icon far fa-clone"></i>
               <p>
                 Package

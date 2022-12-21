@@ -36,22 +36,22 @@
                         <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Full Name</th>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th>Password</th>
-                            <th>Level</th>
+                            <th>Product Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Description</th>
+                            <th>Stok</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td>1</td>
-                            <td>Admin</td>
-                            <td>admin</td>
-                            <td>admin@example.com</td>
-                            <td>qweqweqwe13e13j41iu2y</td>
-                            <td>Administrator</td>
+                            <td width="5%">1</td>
+                            <td>Baju 1</td>
+                            <td>Items</td>
+                            <td>Rp.14,000.00</td>
+                            <td>Size M Bahan Cotton Combed 30s</td>
+                            <td>35</td>
                             <td align="center">
                                 <button class="btn btn-sm btn-default"><i class="fa fa-trash text-danger"></i></button>
                                 <button class="btn btn-sm btn-default"><i class="fa fa-pen text-warning"></i></button>
@@ -65,22 +65,20 @@
                         <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Full Name</th>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th>Password</th>
-                            <th>Level</th>
+                            <th>Material Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Description</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td>1</td>
-                            <td>Admin</td>
-                            <td>admin</td>
-                            <td>admin@example.com</td>
-                            <td>qweqweqwe13e13j41iu2y</td>
-                            <td>Administrator</td>
+                            <td width="5%">1</td>
+                            <td>Bahan 1</td>
+                            <td>Material</td>
+                            <td>Rp. 12,000.00</td>
+                            <td>Size 20 M 230cm x 240xm</td>
                             <td align="center">
                                 <button class="btn btn-sm btn-default"><i class="fa fa-trash text-danger"></i></button>
                                 <button class="btn btn-sm btn-default"><i class="fa fa-pen text-warning"></i></button>

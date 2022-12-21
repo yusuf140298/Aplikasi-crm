@@ -35,11 +35,11 @@ class Account extends CI_Controller {
 			{
 			$post = $this->input->post(null, TRUE);
 			$this->AccountModel->add_admin($post);
-			if($this->db->affected_rows()>0){
-				// $this->session->set_flashdata('success', 'Data Berhasi Disimpan');
+				if($this->db->affected_rows()>0){
+					// $this->session->set_flashdata('success', 'Data Berhasi Disimpan');
+				}
+				redirect('Account');
 			}
-			redirect('Account');
-		}
 	}
 	public function delete_admin($id){
 		$this->AccountModel->delete_admin($id);
