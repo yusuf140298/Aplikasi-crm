@@ -23,4 +23,12 @@ class CategoryModel extends CI_model {
         $this->db->where('id_category', $id);
         $this->db->delete('category');
     }
+    public function edit($post){
+        $params['nama_category'] = $post['editcategory'];
+        $params['description'] = $post['editdescription'];
+
+        $this->db->where('id_category', $post['id_category']);
+        $this->db->update('category', $params);
+
+    }
 }

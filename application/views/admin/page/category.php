@@ -116,7 +116,7 @@
   <div class="modal fade" id="editCategory<?=$data->id_category?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
-        <form action="<?=site_url('edit_category')?>" method="post">
+        <form action="<?=site_url('Category/edit_category')?>" method="post">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">Edit Category</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">

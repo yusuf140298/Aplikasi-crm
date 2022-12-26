@@ -32,31 +32,41 @@
                         </nav>
                         <div class="tab-content p-3" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="product-desc" role="tabpanel" aria-labelledby="product-desc-tab">
-                        <table id="example2" class="table table-bordered table-hover">
+                        <div class="col-12 mb-3">
+                            <a href="<?=site_url('Product/add_items')?>" class="btn btn-sm btn-primary float"><i class="fa fa-plus"></i></a>
+                        </div>
+                        <table id="example1" class="table table-bordered table-hover">
                         <thead>
                         <tr>
                             <th>No.</th>
                             <th>Product Name</th>
                             <th>Category</th>
                             <th>Price</th>
-                            <th>Description</th>
+                            <th>Image</th>
                             <th>Stok</th>
+                            <th>Description</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
+                        <?php
+                        $no = 0;
+                        foreach ( $row->result() as $key => $data ) {
+                            ?>
                         <tr>
-                            <td width="5%">1</td>
-                            <td>Baju 1</td>
-                            <td>Items</td>
-                            <td>Rp.14,000.00</td>
-                            <td>Size M Bahan Cotton Combed 30s</td>
-                            <td>35</td>
+                            <td width="5%"><?=$no++?></td>
+                            <td><?=$data->nama_product?></td>
+                            <td><?=$data->nama_category?></td>
+                            <td><?=$data->price?></td>
+                            <td><?=$data->image?></td>
+                            <td><?=$data->qty?></td>
+                            <td><?=$data->description?></td>
                             <td align="center">
                                 <button class="btn btn-sm btn-default"><i class="fa fa-trash text-danger"></i></button>
                                 <button class="btn btn-sm btn-default"><i class="fa fa-pen text-warning"></i></button>
                             </td>
                         </tr>
+                        <?php }?>
                         </tbody>
                         </table>
                         </div>

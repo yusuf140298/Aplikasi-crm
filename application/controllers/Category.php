@@ -6,6 +6,7 @@ class Category extends CI_Controller {
     function __construct(){
 		parent::__construct();
 		$this->load->model('CategoryModel');
+		check_not_login();
 	}
 
 	public function index()
@@ -37,4 +38,19 @@ class Category extends CI_Controller {
 			}
 				echo "<script>window.location='".site_url('Category')."';</script>";
 	}
+    public function edit_category(){
+        $post = $this->input->post(null, TRUE);
+        $query = $this->db->query("SELECT * FROM category WHERE nama_category = '$post[editcategory]' AND id_category != '$post[id_category]'");
+        if ($query->num_rows()>0) {
+            echo "<script>alert('Category Sudah Ada');</script>";
+			echo "<script>window.location='".site_url('Category')."';</script>";
+        }else {
+            $this->CategoryModel->edit($post);
+            if($this->db->affected_rows()>0){
+                // $this->session->set_flashdata('success', 'Data Berhasi Disimpan');
+            }
+                redirect('Category');
+        }
+    }
+
 }
