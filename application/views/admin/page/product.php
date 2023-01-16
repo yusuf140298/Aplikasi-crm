@@ -58,12 +58,12 @@
                             <td><?=$data->nama_product?></td>
                             <td><?=$data->nama_category?></td>
                             <td><?=$data->price?></td>
-                            <td><?=$data->image?></td>
+                            <td align="center"><img src="<?=base_url()?>uploads/img_product/<?=$data->image?>" style="width:50px; height:50px;"></td>
                             <td><?=$data->qty?></td>
                             <td><?=$data->description?></td>
                             <td align="center">
-                                <button class="btn btn-sm btn-default"><i class="fa fa-trash text-danger"></i></button>
-                                <button class="btn btn-sm btn-default"><i class="fa fa-pen text-warning"></i></button>
+                                <button class="btn btn-default"><i class="fa fa-trash text-danger"></i></button>
+                                <button class="btn btn-default"><i class="fa fa-pen text-warning"></i></button>
                             </td>
                         </tr>
                         <?php }?>
