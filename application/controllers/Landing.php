@@ -7,5 +7,13 @@ class Landing extends CI_Controller {
         // $this->load->view('user/maincontents');
         $this->template->load('user/maincontents','user/page/landing');
     }
+    public function contact(){
+        // $this->load->view('user/maincontents');
+        $this->template->load('user/maincontents','user/page/contact');
+    }
+    public function cek(){
+        // $this->load->view('user/maincontents');
+        $this->template->load('user/maincontents','user/page/cek_transaksi');
+    }
 
 }

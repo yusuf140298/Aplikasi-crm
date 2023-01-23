@@ -87,7 +87,8 @@ class Account extends CI_Controller {
 				}
 
 	}
-	public function username_check(){
+	public function username_check()
+	{
 		$post = $this->input->post(null, TRUE);
 		$query = $this->db->query("SELECT * FROM user WHERE username = '$post[username]' AND id_user != '$post[id_user]'");
 		if ($query->num_rows() > 0) {
@@ -96,6 +97,22 @@ class Account extends CI_Controller {
 		}else{
 			return TRUE;
 		}
+	}
+	public function Accountusers()
+	{
+		$data['row'] = $this->AccountModel->getuser();
+		$data['title'] = 'Account Customer';
+		$this->template->load('admin/maincontents','admin/page/accountuser', $data);
+		// $this->load->view('admin/maincontents');
+	}
+	public function Editstatus()
+	{
+		$post = $this->input->post(null, TRUE);
+		$this->AccountModel->edit_user($post);
+		if($this->db->affected_rows()>0){
+			// $this->session->set_flashdata('success', 'Data Berhasi Disimpan');
+		}
+			redirect('Account/Accountusers');
 	}
 	
 }

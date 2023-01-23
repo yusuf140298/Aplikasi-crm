@@ -16,6 +16,8 @@ class AccountModel extends CI_model {
     // Account Admin
     public function get($id = null){
         $this->db->from('user');
+        $this->db->where('rule <', 4);
+        
         if($id !=null){
             $this->db->where('id_user', $id);
         }
@@ -29,6 +31,18 @@ class AccountModel extends CI_model {
         $params['password'] = sha1($post['password']);
         $params['no_tlp'] = $post['no_tlp'];
         $params['rule'] = $post['rule'];
+        $params['status'] = 1;
+
+        $this->db->insert('user', $params);
+    }
+    public function add_user($post){
+        $params['nama'] = $post['nama'];
+        $params['username'] = $post['username'];
+        $params['email'] = $post['email'];
+        $params['password'] = sha1($post['conpass']);
+        $params['no_tlp'] = $post['no_tlp'];
+        $params['rule'] = $post['rule'];
+        $params['status'] = 1;
 
         $this->db->insert('user', $params);
     }
@@ -45,8 +59,28 @@ class AccountModel extends CI_model {
         }
         $params['no_tlp'] = $post['no_tlp'];
         $params['rule'] = $post['rule'];
+        $params['status'] = $post['status'];
 
 
+        $this->db->where('id_user', $post['id_user']);
+        $this->db->update('user', $params);
+
+    }
+    //  Account User
+
+    public function getUser($id = null){
+        $this->db->from('user');
+        $this->db->where('rule >', 3);
+        
+        if($id !=null){
+            $this->db->where('id_user', $id);
+        }
+        $query = $this->db->get();
+        return $query;
+    }
+
+    public function edit_user($post){
+        $params['status'] = $post['status'];
         $this->db->where('id_user', $post['id_user']);
         $this->db->update('user', $params);
 

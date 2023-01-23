@@ -68,11 +68,11 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="no_tlp">No.tlp</label>
-                                    <input type="number" class="form-control <?=form_error('no_tlp')== !null ? "is-invalid": null?>" id="no_tlp" name="no_tlp" placeholder="+62" value="<?=$this->input->post('no_tlp') ?? $row->no_tlp?>"/>
+                                    <input type="number" class="form-control <?=form_error('no_tlp')==!null ? "is-invalid": null?>" id="no_tlp" name="no_tlp" placeholder="+62" value="<?=$this->input->post('no_tlp') ?? $row->no_tlp?>"/>
                                     <span class="error invalid-feedback"><?=form_error('no_tlp')?></span>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6"> 
                                 <div class="form-group">
                                     <label for="rule">Select Level</label>
                                     <select class="form-control <?=form_error('rule')== !null ? "is-invalid": null?>" id="rule" name="rule">
@@ -82,6 +82,17 @@
                                         <option value="3" <?=$level == 3 ? "selected" : null ?>>Karyawan</option>
                                     </select>
                                     <span class="error invalid-feedback"><?=form_error('rule')?></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="rule">Select Status</label>
+                                    <select class="form-control <?=form_error('status')== !null ? "is-invalid": null?>" id="status" name="status">
+                                        <?php $status = $this->input->post('status') ? $this->input->post('status') : $row->status ?>
+                                        <option value="1" <?=$status == 1 ? "selected" : null ?>>Active</option>
+                                        <option value="2" <?=$status == 2 ? "selected" : null ?>>Not Active</option>
+                                    </select>
+                                    <span class="error invalid-feedback"><?=form_error('status')?></span>
                                 </div>
                             </div>
                         </div>

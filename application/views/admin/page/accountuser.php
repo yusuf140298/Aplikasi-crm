@@ -1,15 +1,15 @@
-  <div class="content-wrapper">
+<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Account Management</h1>
+            <h1>Account Customer</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="<?=site_url('ManajementUser')?>">Account Management</a></li>
-              <li class="breadcrumb-item active">Account Admin</li>
+              <li class="breadcrumb-item active">Account Customer</li>
             </ol>
           </div>
         </div>
@@ -23,12 +23,12 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                <div class="card-header">
-                    <a href="<?=site_url('Account/add_admin')?>" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i></a>
-                </div>
+                <!-- <div class="card-header">
+                    <!-- <a href="<?=site_url('Account/add_admin')?>" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i></a> -->
+                <!-- </div> -->
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <table id="example2" class="table table-bordered table-hover">
+                    <table id="example1" class="table table-bordered table-hover">
                     <thead>
                     <tr>
                         <th>No.</th>
@@ -54,19 +54,11 @@
                         <td><?=$data->email?></td>
                         <td><?=$data->password?></td>
                         <td><?=$data->no_tlp?></td>
-                        <td><?php
-                            if($data->rule == 1){
-                              echo "Administrator";
-                            }else if($data->rule == 2){
-                              echo "Pemilik Toko";
-                            }else{
-                              echo "Karyawan";
-                            } 
-                        ?></td>
+                        <td><?=$data->rule == 4 ? "Customer": "Tidak Terdaftar"?></td>
                         <td><?=$data->status == 1 ? '<p class="text-success">Active</p>' : '<p class="text-danger">Not Active</p>' ?></td>
                         <td align="center">
-                            <button class="btn btn-sm btn-default" data-toggle="modal" data-target="#deleteAccountAdmin"><i class="fa fa-trash text-danger"></i></button>
-                            <a  href="<?=site_url('Account/edit_admin/'.$data->id_user)?>" class="btn btn-sm btn-default"><i class="fa fa-pen text-warning"></i></a>
+                            <button class="btn btn-sm btn-default" data-toggle="modal" data-target="#editStatus<?=$data->id_user?>"><i class="fa fa-pen text-warning"></i></button>
+                            <!-- <a  href="<?=site_url('Account/edit_admin/'.$data->id_user)?>" class="btn btn-sm btn-default"><i class="fa fa-pen text-warning"></i></a> -->
                         </td>
                     </tr>
                     <?php } ?>
@@ -82,23 +74,41 @@
     </section>
     <!-- /.content -->
   </div>
-  <!-- modal delete -->
-  <div class="modal fade" id="deleteAccountAdmin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <!-- modal update -->
+  <?php 
+  $no = 0;
+  foreach ($row->result() as $data) : $no++; ?>
+  <div class="modal fade" id="editStatus<?=$data->id_user?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Delete Account Admin</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">Update Status Customer</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body text-center">
-          sure you want to delete?
+        <form action="<?=site_url('Account/editstatus')?>" method="post">
+            <div class="modal-body">
+            <div class="form-group">
+                <label for="">Nama</label>
+                <input type="text" class="form-control" name="nama" id="" value="<?=$data->nama?>" readonly>
+                <input type="hidden" name="id_user" id="id_user" value="<?=$data->id_user?>">
+            </div>
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select name="status" id="status" class="form-control">
+                <?php $status = $this->input->post('status') ? $this->input->post('status') : $data->status ?>
+                <option value="1" <?=$status == 1 ? "selected" : null ?>>Active</option>
+                <option value="2" <?=$status == 2 ? "selected" : null ?>>Not Active</option>
+                </select>
+            </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save Change</button>
+            </div>
+        </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <a href="<?=site_url('Account/delete_admin/'.$data->id_user)?>" class="btn btn-primary">Delete</a>
-        </div>
-      </div>
     </div>
   </div>
+  <?php endforeach ;?>

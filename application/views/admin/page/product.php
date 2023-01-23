@@ -60,10 +60,10 @@
                             <td><?=$data->price?></td>
                             <td align="center"><img src="<?=base_url()?>uploads/img_product/<?=$data->image?>" style="width:50px; height:50px;"></td>
                             <td><?=$data->qty?></td>
-                            <td><?=$data->description?></td>
+                            <td><?=$data->description?></td> 
                             <td align="center">
-                                <button class="btn btn-default"><i class="fa fa-trash text-danger"></i></button>
-                                <button class="btn btn-default"><i class="fa fa-pen text-warning"></i></button>
+                                <button class="btn btn-sm btn-default" data-toggle="modal" data-target="#deleteProduct"><i class="fa fa-trash text-danger"></i></button>
+                                <a  href="<?=site_url('Product/edit_product/'.$data->id_product)?>" class="btn btn-sm btn-default"><i class="fa fa-pen text-warning"></i></a>
                             </td>
                         </tr>
                         <?php }?>
@@ -106,4 +106,25 @@
 
     </section>
     <!-- /.content -->
+  </div>
+
+  <!-- modal delete product -->
+  <div class="modal fade" id="deleteProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Delete Product</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center">
+          sure you want to delete?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <a href="<?=site_url('Account/delete_product/'.$data->id_product)?>" class="btn btn-primary">Delete</a>
+        </div>
+      </div>
+    </div>
   </div>

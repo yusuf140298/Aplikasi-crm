@@ -74,7 +74,7 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  color: #6675df;
+  color: #ffd000 !important;
 }
 
 /*---------------------------------------------*/
@@ -185,7 +185,7 @@ iframe {
 
 /*==================================================================
 [ Background ]*/
-.bg1 {background: #3b5998;}
+.bg1 {background: #ffd000;}
 .bg2 {background: #1da1f2;}
 .bg3 {background: #cd201f;}
 
@@ -343,7 +343,7 @@ input.input100 {
   top: -1px;
   left: -1px;
   pointer-events: none;
-  border: 1px solid #6675df;
+  border: 1px solid #ffd000 !important;
   border-radius: 10px;
 
   visibility: hidden;
@@ -438,7 +438,7 @@ input.input100 {
   height: 18px;
   border-radius: 2px;
   background: #fff;
-  border: 1px solid #6675df;
+  border: 1px solid #ffd000 !important;
   left: 0;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -449,7 +449,7 @@ input.input100 {
 }
 
 .input-checkbox100:checked + .label-checkbox100::before {
-  color: #6675df;
+  color: #ffd000 !important;
 }
 
 
@@ -478,7 +478,7 @@ input.input100 {
   width: 100%;
   height: 50px;
   border-radius: 10px;
-  background: #6675df;
+  background: #ffd000 !important;
 
   font-family: Montserrat-Bold;
   font-size: 12px;
@@ -494,7 +494,7 @@ input.input100 {
 }
 
 .login100-form-btn:hover {
-  background: #333333;
+  background: #443800;
 }
 
 

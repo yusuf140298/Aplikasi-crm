@@ -60,7 +60,7 @@
               </li>
               <?php } ?>
               <li class="nav-item">
-                <a href="../layout/top-nav-sidebar.html" class="nav-link">
+                <a href="<?=site_url('Account/Accountusers')?>" class="nav-link <?=$this->uri->segment(1) == 'Account/Accountusers'? 'active' : '' ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Member Account</p>
                 </a>

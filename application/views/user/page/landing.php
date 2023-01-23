@@ -10,7 +10,7 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item position-relative active" style="height: 430px;">
-                        <img class="position-absolute w-100 h-100" src="<?=base_url()?>assets/landing_page/img/carousel-1.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="<?=base_url()?>assets/landing_page/img/cs-1 .jpeg" style="object-fit: cover;">
                         <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div class="p-3" style="max-width: 700px;">
                                 <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Printing & Clothing</h1>
@@ -20,7 +20,7 @@
                         </div>
                     </div>
                     <div class="carousel-item position-relative" style="height: 430px;">
-                        <img class="position-absolute w-100 h-100" src="<?=base_url()?>assets/landing_page/img/carousel-2.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="<?=base_url()?>assets/landing_page/img/cs-2.jpeg" style="object-fit: cover;">
                         <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div class="p-3" style="max-width: 700px;">
                                 <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Printing</h1>
@@ -30,7 +30,7 @@
                         </div>
                     </div>
                     <div class="carousel-item position-relative" style="height: 430px;">
-                        <img class="position-absolute w-100 h-100" src="<?=base_url()?>assets/landing_page/img/carousel-3.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="<?=base_url()?>assets/landing_page/img/cs-3.jpeg" style="object-fit: cover;">
                         <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div class="p-3" style="max-width: 700px;">
                                 <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Clothing</h1>
@@ -369,7 +369,7 @@
                     </div>
                     <!-- <div class="d-flex align-items-center justify-content-center mb-1">
                         <small class="fa fa-star text-primary mr-1"></small>
-                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>git
                         <small class="fa fa-star text-primary mr-1"></small>
                         <small class="far fa-star text-primary mr-1"></small>
                         <small class="far fa-star text-primary mr-1"></small>
@@ -390,8 +390,8 @@
             <div class="product-offer mb-30" style="height: 300px;">
                 <img class="img-fluid" src="<?=base_url()?>assets/landing_page/img/offer-1.jpg" alt="">
                 <div class="offer-text">
-                    <h6 class="text-white text-uppercase">Save 20%</h6>
-                    <h3 class="text-white mb-3">Special Offer</h3>
+                    <h6 class="text-white text-uppercase">Diskon 20%</h6>
+                    <h3 class="text-white mb-3">Special Imlek</h3>
                     <a href="" class="btn btn-primary">Belanja Sekarang</a>
                 </div>
             </div>
@@ -400,8 +400,8 @@
             <div class="product-offer mb-30" style="height: 300px;">
                 <img class="img-fluid" src="<?=base_url()?>assets/landing_page/img/offer-2.jpg" alt="">
                 <div class="offer-text">
-                    <h6 class="text-white text-uppercase">Save 20%</h6>
-                    <h3 class="text-white mb-3">Special Offer</h3>
+                    <h6 class="text-white text-uppercase">Diskon 20%</h6>
+                    <h3 class="text-white mb-3">Special Imlek</h3>
                     <a href="" class="btn btn-primary">Belanja Sekarang</a>
                 </div>
             </div>

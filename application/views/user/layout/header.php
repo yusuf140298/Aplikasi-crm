@@ -14,7 +14,7 @@
                     <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
                     <div class="dropdown-menu dropdown-menu-right">
                         <a href="<?=site_url('Authentication')?>" class="dropdown-item">Login</a>
-                        <a href="<?=site_url('Authentication')?>" class="dropdown-item">Register</a>
+                        <a href="<?=site_url('Register')?>" class="dropdown-item">Register</a>
                     </div>
                 </div>
                 <!-- <div class="btn-group mx-2">
@@ -54,7 +54,7 @@
             </a>
         </div>
         <div class="col-lg-4 col-6 text-left">
-            <form action="">
+            <!-- <form action="">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search for products">
                     <div class="input-group-append">
@@ -63,7 +63,7 @@
                         </span>
                     </div>
                 </div>
-            </form>
+            </form> -->
         </div>
         <div class="col-lg-4 col-6 text-right">
             <p class="m-0">Customer Service</p>

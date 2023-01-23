@@ -49,7 +49,7 @@
             <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
                 <h5 class="text-secondary text-uppercase mb-4">The King Printing & Clothing</h5>
                 <p class="mb-4">Kepuasaan Pelanggan Adalaha Prioritas Kami</p>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Jl.Cikande Permai Blok. D, Serang Banten 42442</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Jl. Utama Cikande Permai, Situterate, Kec. Cikande, Kabupaten Serang, Banten 42186</p>
                 <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>The_KingPrinting01@mail.com</p>
                 <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+62 8954 0558 3600</p>
             </div>
