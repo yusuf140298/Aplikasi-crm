@@ -114,16 +114,16 @@
           </li>
           <li class="nav-header">EVENT</li>
           <li class="nav-item">
-            <a href="../widgets.html" class="nav-link">
+            <a href="<?=site_url('PointAward')?>" class="nav-link <?=$this->uri->segment(1) == 'PointAward'? 'active' : '' ?>">
               <i class="nav-icon fas fa-link"></i>
               <p>
-                Promo
+                Point Award
                 <!-- <span class="right badge badge-danger">New</span> -->
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="../widgets.html" class="nav-link">
+            <a href="<?=site_url('Voucher')?>" class="nav-link <?=$this->uri->segment(1) == 'Voucher'? 'active' : '' ?>">
               <i class="nav-icon fas fa-receipt"></i>
               <p>
                 Voucher

@@ -13,6 +13,14 @@ class AccountModel extends CI_model {
         $query = $this->db->get();
         return $query;
     }
+    public function login_user($post){
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->where('email', $post['email']);
+        $this->db->where('password', sha1($post['pass']));
+        $query = $this->db->get();
+        return $query;
+    }
     // Account Admin
     public function get($id = null){
         $this->db->from('user');

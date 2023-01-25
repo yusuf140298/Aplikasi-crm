@@ -34,8 +34,7 @@
                         <th>No.</th>
                         <th>Full Name</th>
                         <th>Username</th>
-                        <th>Email</th>
-                        <th>Password</th>
+                        <th>Email</th>  
                         <th>No. Wa/Tlp</th>
                         <th>Level</th>
                         <th>Status</th>
@@ -52,7 +51,6 @@
                         <td><?=$data->nama?></td>
                         <td><?=$data->username?></td>
                         <td><?=$data->email?></td>
-                        <td><?=$data->password?></td>
                         <td><?=$data->no_tlp?></td>
                         <td><?=$data->rule == 4 ? "Customer": "Tidak Terdaftar"?></td>
                         <td><?=$data->status == 1 ? '<p class="text-success">Active</p>' : '<p class="text-danger">Not Active</p>' ?></td>

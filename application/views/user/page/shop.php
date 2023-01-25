@@ -20,15 +20,15 @@
                     <form action="" name="sentMessage" id="contactForm" novalidate="novalidate">
                         <div class="form-group">
                             <label for="name">Nama Lengkap</label>
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Masukan Nama Lengkap">
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Masukan Nama Lengkap" value="<?=$this->fungsi->customer_login()->nama?>" readonly>
                         </div>
                         <div class="form-group">
                             <label for="name">No. Tlp</label>
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Masukan No.tlp">
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Masukan No.tlp" value="<?=$this->fungsi->customer_login()->no_tlp?>" readonly>
                         </div>
                         <div class="form-group">
                             <label for="name">Email</label>
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Masukan E-mail">
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Masukan E-mail" value="<?=$this->fungsi->customer_login()->email?>" readonly>
                         </div>
                     </form>
                 </div>

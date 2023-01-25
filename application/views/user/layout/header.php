@@ -10,6 +10,7 @@
         </div>
         <div class="col-lg-6 text-center text-lg-right">
             <div class="d-inline-flex align-items-center">
+                <?php if($this->session->userdata('id_user') == null){?>
                 <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
                     <div class="dropdown-menu dropdown-menu-right">
@@ -17,6 +18,7 @@
                         <a href="<?=site_url('Register')?>" class="dropdown-item">Register</a>
                     </div>
                 </div>
+                <?php } ?>
                 <!-- <div class="btn-group mx-2">
                     <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">USD</button>
                     <div class="dropdown-menu dropdown-menu-right">
