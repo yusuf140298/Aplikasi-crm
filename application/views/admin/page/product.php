@@ -40,6 +40,8 @@
                         <tr>
                             <th>No.</th>
                             <th>Product Name</th>
+                            <th>Color</th>
+                            <th>Size</th>
                             <th>Category</th>
                             <th>Price</th>
                             <th>Image</th>
@@ -56,6 +58,8 @@
                         <tr>
                             <td width="5%"><?=$no++?></td>
                             <td><?=$data->nama_product?></td>
+                            <td><?=$data->color?></td>
+                            <td><?=$data->size?></td>
                             <td><?=$data->nama_category?></td>
                             <td><?=$data->price?></td>
                             <td align="center"><img src="<?=base_url()?>uploads/img_product/<?=$data->image?>" style="width:50px; height:50px;"></td>

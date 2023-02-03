@@ -11,7 +11,7 @@ class Landing extends CI_Controller {
 	}
 
     public function index(){
-        $data['product'] = $this->ProductModel->get();
+        $data['product'] = $this->ProductModel->tampil();
         $this->template->load('user/maincontents','user/page/landing', $data);
     }
     public function contact(){

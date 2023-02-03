@@ -131,6 +131,162 @@
 
     <!-- Template Javascript -->
     <script src="<?=base_url()?>assets/landing_page/js/main.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#sablon').change(function(){
+                var id = $(this).val();
+                
+                // console.log(id);
+                $.ajax({
+                type : "POST",
+                url : "<?=site_url('transaksi/get_data')?>",
+                data : {
+                    id: id
+                },
+                cache : false,
+                dataType: "JSON",
+                success: function(data){
+                    $.each(data,function(image,price){
+                        $('[name="image_sablon"]').attr('src',"<?php echo base_url()?>uploads/img_sablon/"+data.image);
+                        document.getElementById("hargaSablon").innerHTML = "Rp. "+data.price
+                        $('#hargaS').val(data.price);
+                        // console.log(data.image);
+                    });
+                }
+                });
+                return false;
+            });
+            $('[name="size"]').change(function(){
+                var val = $(this).val();
+                // console.log(val);
+                $('#sizeValue').val(val);
+                document.getElementById("hargaProduct").innerHTML = "Rp. 0"
+            })
+            $('[name="color"]').change(function(){
+                var idProduct = $('#idCategory').val();
+                var size = $('#sizeValue').val();
+                var val = $(this).val();
+                // console.log(val+"-"+size+"-"+idProduct);
+                $.ajax({
+                type : "POST",
+                url : "<?=site_url('transaksi/get_size')?>",
+                data : {
+                    idProduct:idProduct,
+                    idSize:size,
+                    val: val
+                },
+                cache : false,
+                dataType: "JSON",
+                success: function(data){
+                    $.each(data,function(price){
+                        // $('[name="image_sablon"]').attr('src',"<?php echo base_url()?>uploads/img_sablon/"+data.image);
+                        // console.log(data.price);
+                        if (data.price != null){
+                        document.getElementById("hargaProduct").innerHTML = "Rp. "+data.price
+                        $('#hargaP').val(data.price);
+                    }
+                    else{
+                        document.getElementById("hargaProduct").innerHTML = "Rp. 0";
+                        $('#hargaP').val(0);
+                    }
+                    // document.getElementById("subTotal").innerHTML = "Rp. "+data.price
+                    });
+                }
+                });
+                return false;
+            })  
+            $('#qty').change(function(){
+                var qty = $(this).val();
+                // console.log("asdasda");
+            })
+            // btnQty(function(){
+            //     console.log("asdasd");
+            // }) 
+        })
+    </script>
+        
+    <script>
+        $(document).ready(function(){
+            $('#pengiriman').css('display','none');
+            $('#jsp').click(function(){
+                if($('[name="jsp"]:checked').val() === '1'){
+                    $('#pengiriman').slideDown(500)
+                    var nilai = document.getElementById('subT').value;
+                    var nilai2 = 10000
+                    // var nilai3 = 20000
+                    var total = parseFloat(nilai2) + parseFloat(nilai)
+                    // console.log(total);
+                    document.getElementById('jp').innerHTML = "Rp ."+nilai2
+                    document.getElementById('subTotal').innerHTML = "Rp ."+total
+                    $('#subToValue').val(total)
+
+                }
+                else{
+                    $('#pengiriman').slideUp('fast');
+                    var nilai = document.getElementById('subT').value;
+                    // var nilai2 = 20
+                    // var nilai3 = 20000
+                    // var total = parseInt(nilai) - parseInt(nilai2)
+                    document.getElementById("jp").innerHTML = "Rp. 0"
+                    document.getElementById('subTotal').innerHTML = "Rp ."+nilai
+                    $('#subToValue').val(nilai)
+
+
+
+                }
+            })
+        })
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $("#provinsi").change(function (){
+                var url = "<?php echo site_url('Transaksi/add_ajax_kota');?>/"+$(this).val();
+                $('#kota').load(url);
+                return false;
+            })
+   
+            $("#kota").change(function (){
+                var url = "<?php echo site_url('Transaksi/add_ajax_kec');?>/"+$(this).val();
+                $('#kecamatan').load(url);
+                return false;
+            })
+
+        $("#kecamatan").change(function (){
+                var url = "<?php echo site_url('Transaksi/add_ajax_des');?>/"+$(this).val();
+                $('#desa').load(url);
+                return false;
+            })
+        })
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('#point').click(function(){
+                if($('[name="point"]:checked').val() >= '3000'){
+                    var nilai = document.getElementById('subToValue').value;
+                    var nilai2 = document.getElementById('textP').innerHTML;
+                    var total = parseFloat(nilai) - parseFloat(nilai2)
+                    // console.log(total);
+                    document.getElementById('potongan').innerHTML = "(-) Rp ."+nilai2
+                    document.getElementById('totalKabeh').innerHTML = "Rp ."+total
+                    $('#potonganharga').val(nilai2)
+                    $('#totalsemua').val(total)
+                }
+                else{
+                    var nilai = document.getElementById('subToValue').value;
+                    var nilai2 = document.getElementById('textP').innerHTML;
+                    // var nilai3 = 20000
+                    // var total = parseInt(nilai) - parseInt(nilai2)
+                    document.getElementById("potongan").innerHTML = "Rp. 0"
+                    document.getElementById('totalKabeh').innerHTML = "Rp ."+nilai
+                    $('#potonganharga').val(0)
+                    $('#totalsemua').val(nilai)
+
+
+                }
+            })
+        })
+    </script>
 </body>
 
 </html>

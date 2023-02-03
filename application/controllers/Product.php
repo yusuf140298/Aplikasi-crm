@@ -24,7 +24,9 @@ class Product extends CI_Controller {
 		$this->form_validation->set_rules('items', 'Items', 'required');
 		$this->form_validation->set_rules('qty', 'Quantity', 'required|numeric');
 		$this->form_validation->set_rules('price', 'Price', 'required|numeric');
-		$this->form_validation->set_rules('category', 'category', 'required');
+		$this->form_validation->set_rules('category', 'Category', 'required');
+		$this->form_validation->set_rules('color', 'Color', 'required');
+		$this->form_validation->set_rules('size', 'Size', 'required');
 		// $this->form_validation->set_rules('image_product', 'Image', 'required');
 		$this->form_validation->set_rules('description', 'Description', 'required');
 		if ($this->form_validation->run() == FALSE){
@@ -65,6 +67,8 @@ class Product extends CI_Controller {
 		$this->form_validation->set_rules('qty', 'Quantity', 'required|numeric');
 		$this->form_validation->set_rules('price', 'Price', 'required|numeric');
 		$this->form_validation->set_rules('category', 'category', 'required');
+		$this->form_validation->set_rules('color', 'Color', 'required');
+		$this->form_validation->set_rules('size', 'Size', 'required');
 		$this->form_validation->set_rules('description', 'Description', 'required');
 		if ($this->form_validation->run() == FALSE){
 			$query = $this->ProductModel->get($id);

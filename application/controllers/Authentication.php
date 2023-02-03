@@ -33,11 +33,15 @@ class Authentication extends CI_Controller {
 		<?php
         if($query->num_rows()> 0){
             $row = $query->row();
+            if($row->rule == 4){
             $params = array(
                     'id_user' => $row->id_user,
                     'rule' => $row->rule
                 );
-        $this->session->set_userdata($params);
+            $this->session->set_userdata($params);
+            }else{
+                redirect('AuthAdmin');
+            }
         ?>
 		<script>
             Swal.fire({

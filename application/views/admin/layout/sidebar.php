@@ -67,19 +67,31 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
+          <li class="nav-item <?=$this->uri->segment(1) == 'TransaksiAdmin'? 'menu-is-opening menu-open' : '' ?>">
+            <a href="#" class="nav-link <?=$this->uri->segment(1) == 'TransaksiAdmin'? 'menu-is-opening menu-open' : '' ?>">
               <i class="nav-icon fas fa-edit"></i>
               <p>
-                Sales
+                Transaksi
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../forms/general.html" class="nav-link">
+                <a href="<?=site_url('TransaksiAdmin')?>" class="nav-link <?=$this->uri->segment(1) == 'TransaksiAdmin'? 'active' : '' ?>">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Proposal</p>
+                  <p>Pesanan Barang</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=site_url('TransaksiAdmin/pembayaran')?>" class="nav-link <?=$this->uri->segment(1) == 'TransaksiAdmin/pembayaran'? 'active' : '' ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pembayaran</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=site_url('TransaksiAdmin/pengiriman')?>" class="nav-link <?=$this->uri->segment(1) == 'TransaksiAdmin/pengiriman'? 'active' : '' ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pengiriman</p>
                 </a>
               </li>
             </ul>

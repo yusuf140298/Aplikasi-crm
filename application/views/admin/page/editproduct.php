@@ -51,6 +51,22 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    <label for="color">Color</label>
+                                    <input type="text" class="form-control <?=form_error('color')== !null ? "is-invalid": null?>" id="color" name="color" placeholder="Masukan Nama color" value="<?=$this->input->post('color') ?? $row->color?>"/>
+                                    <span class="error invalid-feedback"><?=form_error('color')?></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="size">Size</label>
+                                    <input type="text" class="form-control <?=form_error('size')== !null ? "is-invalid": null?>" id="size" name="size" placeholder="Masukan size" value="<?=$this->input->post('size') ?? $row->size?>"/>
+                                    <span class="error invalid-feedback"><?=form_error('size')?></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
                                     <label for="no_tlp">Price</label>
                                     <div class="input-group">
                                     <div class="input-group-prepend">
